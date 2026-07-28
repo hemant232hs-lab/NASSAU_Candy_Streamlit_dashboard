@@ -309,7 +309,7 @@ elif page == "📦 Product Insights":
     col1, col2 = st.columns(2)
     with col1:
         st.markdown("**Product Margin Scatter** (bubble = order count)")
-        fig10 = px.scatter(prod, x="Sales", y="Margin %", size="Orders", color="Margin Band", text="Product Name", color_discrete_map={"🔴 Critical (<20%)": COLORS["red"], "🟡 Low (20-50%)": COLORS["amber"], "🟢 Acceptable (50-65%)": COLORS["light"], "✅ Strong (>65%)": COLORS["green"]}, labels={"Sales":"Total Sales ($)"}, size_max=45)
+        fig10 = px.scatter(prod, x="Sales", y="Margin %", size="Orders", color="Margin Band", hover_name="Product Name", color_discrete_map={"🔴 Critical (<20%)": COLORS["red"], "🟡 Low (20-50%)": COLORS["amber"], "🟢 Acceptable (50-65%)": COLORS["light"], "✅ Strong (>65%)": COLORS["green"]}, labels={"Sales":"Total Sales ($)"}, size_max=25)
         fig10.add_hline(y=20, line_dash="dash", line_color=COLORS["red"], annotation_text="Low Margin Threshold (20%)", annotation_position="top right")
         fig10.add_hline(y=65, line_dash="dash", line_color=COLORS["green"], annotation_text="Strong Margin (65%)", annotation_position="bottom right")
         fig10.update_traces(textposition="top center", textfont_size=9)
