@@ -312,7 +312,6 @@ elif page == "📦 Product Insights":
         fig10 = px.scatter(prod, x="Sales", y="Margin %", size="Orders", color="Margin Band", hover_name="Product Name", color_discrete_map={"🔴 Critical (<20%)": COLORS["red"], "🟡 Low (20-50%)": COLORS["amber"], "🟢 Acceptable (50-65%)": COLORS["light"], "✅ Strong (>65%)": COLORS["green"]}, labels={"Sales":"Total Sales ($)"}, size_max=25)
         fig10.add_hline(y=20, line_dash="dash", line_color=COLORS["red"], annotation_text="Low Margin Threshold (20%)", annotation_position="top right")
         fig10.add_hline(y=65, line_dash="dash", line_color=COLORS["green"], annotation_text="Strong Margin (65%)", annotation_position="bottom right")
-        fig10.update_traces(textposition="top center", textfont_size=9)
         fig10.update_layout(height=380, margin=dict(l=0,r=0,t=10,b=0), plot_bgcolor="white", paper_bgcolor="white", legend=dict(orientation="h", y=-0.3, title=""))
         st.plotly_chart(fig10, use_container_width=True)
 
